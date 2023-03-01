@@ -22,7 +22,10 @@ namespace csharp_lb4_wf.Model
             Employees = employees;
             Name = name;
         }
-
+        public Company()
+        {
+            
+        }
         public void AddDepartment(Department department)
         {
             if (department.IsValid())            

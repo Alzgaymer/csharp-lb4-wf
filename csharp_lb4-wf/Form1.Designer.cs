@@ -28,323 +28,371 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btSortByDepartment = new System.Windows.Forms.Button();
-            this.btSortBySalary = new System.Windows.Forms.Button();
-            this.btSortByName = new System.Windows.Forms.Button();
-            this.btSortByID = new System.Windows.Forms.Button();
-            this.btDeleteDepartment = new System.Windows.Forms.Button();
-            this.dgDepartments = new System.Windows.Forms.DataGridView();
-            this.btDeleteEmloyee = new System.Windows.Forms.Button();
-            this.btAddEmployee = new System.Windows.Forms.Button();
-            this.btAddDepartment = new System.Windows.Forms.Button();
-            this.btDeleteCompany = new System.Windows.Forms.Button();
-            this.lvCompanies = new System.Windows.Forms.ListView();
-            this.dgEmployees = new System.Windows.Forms.DataGridView();
-            this.employeeIdDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salaryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.departmentDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.employeeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btAddCompany = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbCompanyName = new System.Windows.Forms.TextBox();
-            this.departmentsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.departmentsBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.btShoAll = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDepartments)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEmployees)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource1)).BeginInit();
-            this.SuspendLayout();
+            components = new System.ComponentModel.Container();
+            panel1 = new Panel();
+            btShoAll = new Button();
+            btSortByDepartment = new Button();
+            btSortBySalary = new Button();
+            btSortByName = new Button();
+            btSortByID = new Button();
+            btDeleteDepartment = new Button();
+            dgDepartments = new DataGridView();
+            btDeleteEmloyee = new Button();
+            btAddEmployee = new Button();
+            btAddDepartment = new Button();
+            btDeleteCompany = new Button();
+            lvCompanies = new ListView();
+            dgEmployees = new DataGridView();
+            employeeIdDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            employeeNameDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            salaryDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            departmentDataGridViewTextBoxColumn = new DataGridViewTextBoxColumn();
+            employeeBindingSource = new BindingSource(components);
+            label4 = new Label();
+            label3 = new Label();
+            label2 = new Label();
+            btAddCompany = new Button();
+            label1 = new Label();
+            tbCompanyName = new TextBox();
+            departmentsBindingSource = new BindingSource(components);
+            companyBindingSource = new BindingSource(components);
+            departmentsBindingSource1 = new BindingSource(components);
+            btLoadJson = new Button();
+            btSaveJson = new Button();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgDepartments).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgEmployees).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)employeeBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)departmentsBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)companyBindingSource).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)departmentsBindingSource1).BeginInit();
+            SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btShoAll);
-            this.panel1.Controls.Add(this.btSortByDepartment);
-            this.panel1.Controls.Add(this.btSortBySalary);
-            this.panel1.Controls.Add(this.btSortByName);
-            this.panel1.Controls.Add(this.btSortByID);
-            this.panel1.Controls.Add(this.btDeleteDepartment);
-            this.panel1.Controls.Add(this.dgDepartments);
-            this.panel1.Controls.Add(this.btDeleteEmloyee);
-            this.panel1.Controls.Add(this.btAddEmployee);
-            this.panel1.Controls.Add(this.btAddDepartment);
-            this.panel1.Controls.Add(this.btDeleteCompany);
-            this.panel1.Controls.Add(this.lvCompanies);
-            this.panel1.Controls.Add(this.dgEmployees);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.btAddCompany);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.tbCompanyName);
-            this.panel1.Location = new System.Drawing.Point(12, 12);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(746, 611);
-            this.panel1.TabIndex = 0;
-            // 
-            // btSortByDepartment
-            // 
-            this.btSortByDepartment.Location = new System.Drawing.Point(441, 520);
-            this.btSortByDepartment.Name = "btSortByDepartment";
-            this.btSortByDepartment.Size = new System.Drawing.Size(135, 23);
-            this.btSortByDepartment.TabIndex = 19;
-            this.btSortByDepartment.Text = "Sort By Departmnet ID";
-            this.btSortByDepartment.UseVisualStyleBackColor = true;
-            this.btSortByDepartment.Click += new System.EventHandler(this.btSortByDepartment_Click);
-            // 
-            // btSortBySalary
-            // 
-            this.btSortBySalary.Location = new System.Drawing.Point(279, 520);
-            this.btSortBySalary.Name = "btSortBySalary";
-            this.btSortBySalary.Size = new System.Drawing.Size(135, 23);
-            this.btSortBySalary.TabIndex = 18;
-            this.btSortBySalary.Text = "Sort By Salary";
-            this.btSortBySalary.UseVisualStyleBackColor = true;
-            this.btSortBySalary.Click += new System.EventHandler(this.btSortBySalary_Click);
-            // 
-            // btSortByName
-            // 
-            this.btSortByName.Location = new System.Drawing.Point(441, 472);
-            this.btSortByName.Name = "btSortByName";
-            this.btSortByName.Size = new System.Drawing.Size(135, 23);
-            this.btSortByName.TabIndex = 17;
-            this.btSortByName.Text = "Sort By Name";
-            this.btSortByName.UseVisualStyleBackColor = true;
-            this.btSortByName.Click += new System.EventHandler(this.btSortByName_Click);
-            // 
-            // btSortByID
-            // 
-            this.btSortByID.Location = new System.Drawing.Point(279, 472);
-            this.btSortByID.Name = "btSortByID";
-            this.btSortByID.Size = new System.Drawing.Size(135, 23);
-            this.btSortByID.TabIndex = 16;
-            this.btSortByID.Text = "Sort By ID";
-            this.btSortByID.UseVisualStyleBackColor = true;
-            this.btSortByID.Click += new System.EventHandler(this.btSortByID_Click);
-            // 
-            // btDeleteDepartment
-            // 
-            this.btDeleteDepartment.Location = new System.Drawing.Point(441, 228);
-            this.btDeleteDepartment.Name = "btDeleteDepartment";
-            this.btDeleteDepartment.Size = new System.Drawing.Size(142, 23);
-            this.btDeleteDepartment.TabIndex = 15;
-            this.btDeleteDepartment.Text = "Delete";
-            this.btDeleteDepartment.UseVisualStyleBackColor = true;
-            this.btDeleteDepartment.Click += new System.EventHandler(this.btDeleteDepartment_Click);
-            // 
-            // dgDepartments
-            // 
-            this.dgDepartments.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgDepartments.Location = new System.Drawing.Point(3, 218);
-            this.dgDepartments.Name = "dgDepartments";
-            this.dgDepartments.RowTemplate.Height = 25;
-            this.dgDepartments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgDepartments.Size = new System.Drawing.Size(240, 150);
-            this.dgDepartments.TabIndex = 14;
-            this.dgDepartments.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgDepartments_CellContentClick_1);
-            // 
-            // btDeleteEmloyee
-            // 
-            this.btDeleteEmloyee.Location = new System.Drawing.Point(441, 423);
-            this.btDeleteEmloyee.Name = "btDeleteEmloyee";
-            this.btDeleteEmloyee.Size = new System.Drawing.Size(142, 23);
-            this.btDeleteEmloyee.TabIndex = 13;
-            this.btDeleteEmloyee.Text = "Delete Employee";
-            this.btDeleteEmloyee.UseVisualStyleBackColor = true;
-            this.btDeleteEmloyee.Click += new System.EventHandler(this.btDeleteEmloyee_Click);
-            // 
-            // btAddEmployee
-            // 
-            this.btAddEmployee.Location = new System.Drawing.Point(279, 423);
-            this.btAddEmployee.Name = "btAddEmployee";
-            this.btAddEmployee.Size = new System.Drawing.Size(135, 23);
-            this.btAddEmployee.TabIndex = 12;
-            this.btAddEmployee.Text = "Add Employee";
-            this.btAddEmployee.UseVisualStyleBackColor = true;
-            this.btAddEmployee.Click += new System.EventHandler(this.btAddEmployee_Click);
-            // 
-            // btAddDepartment
-            // 
-            this.btAddDepartment.Location = new System.Drawing.Point(279, 228);
-            this.btAddDepartment.Name = "btAddDepartment";
-            this.btAddDepartment.Size = new System.Drawing.Size(135, 23);
-            this.btAddDepartment.TabIndex = 11;
-            this.btAddDepartment.Text = "Add Department";
-            this.btAddDepartment.UseVisualStyleBackColor = true;
-            this.btAddDepartment.Click += new System.EventHandler(this.btAddDepartment_Click);
-            // 
-            // btDeleteCompany
-            // 
-            this.btDeleteCompany.Location = new System.Drawing.Point(496, 42);
-            this.btDeleteCompany.Name = "btDeleteCompany";
-            this.btDeleteCompany.Size = new System.Drawing.Size(75, 23);
-            this.btDeleteCompany.TabIndex = 10;
-            this.btDeleteCompany.Text = "Delete";
-            this.btDeleteCompany.UseVisualStyleBackColor = true;
-            this.btDeleteCompany.Click += new System.EventHandler(this.btDeleteCompany_Click);
-            // 
-            // lvCompanies
-            // 
-            this.lvCompanies.Location = new System.Drawing.Point(3, 24);
-            this.lvCompanies.Name = "lvCompanies";
-            this.lvCompanies.Size = new System.Drawing.Size(240, 159);
-            this.lvCompanies.TabIndex = 9;
-            this.lvCompanies.UseCompatibleStateImageBehavior = false;
-            this.lvCompanies.SelectedIndexChanged += new System.EventHandler(this.lvCompanies_SelectedIndexChanged);
-            // 
-            // dgEmployees
-            // 
-            this.dgEmployees.AllowUserToAddRows = false;
-            this.dgEmployees.AutoGenerateColumns = false;
-            this.dgEmployees.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgEmployees.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.employeeIdDataGridViewTextBoxColumn,
-            this.employeeNameDataGridViewTextBoxColumn,
-            this.salaryDataGridViewTextBoxColumn,
-            this.departmentDataGridViewTextBoxColumn});
-            this.dgEmployees.DataSource = this.employeeBindingSource;
-            this.dgEmployees.Location = new System.Drawing.Point(3, 410);
-            this.dgEmployees.Name = "dgEmployees";
-            this.dgEmployees.RowTemplate.Height = 25;
-            this.dgEmployees.Size = new System.Drawing.Size(240, 150);
-            this.dgEmployees.TabIndex = 8;
-            // 
-            // employeeIdDataGridViewTextBoxColumn
-            // 
-            this.employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
-            this.employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
-            // 
-            // employeeNameDataGridViewTextBoxColumn
-            // 
-            this.employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.HeaderText = "EmployeeName";
-            this.employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
-            // 
-            // salaryDataGridViewTextBoxColumn
-            // 
-            this.salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
-            this.salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
-            this.salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
-            // 
-            // departmentDataGridViewTextBoxColumn
-            // 
-            this.departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
-            this.departmentDataGridViewTextBoxColumn.HeaderText = "Department";
-            this.departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
-            // 
-            // employeeBindingSource
-            // 
-            this.employeeBindingSource.DataSource = typeof(csharp_lb4_wf.Model.Employee);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(3, 392);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 15);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "Employees";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(3, 200);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 15);
-            this.label3.TabIndex = 6;
-            this.label3.Text = "Departments";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(3, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(67, 15);
-            this.label2.TabIndex = 5;
-            this.label2.Text = "Companies";
-            // 
-            // btAddCompany
-            // 
-            this.btAddCompany.Location = new System.Drawing.Point(404, 42);
-            this.btAddCompany.Name = "btAddCompany";
-            this.btAddCompany.Size = new System.Drawing.Size(75, 23);
-            this.btAddCompany.TabIndex = 3;
-            this.btAddCompany.Text = "Add";
-            this.btAddCompany.UseVisualStyleBackColor = true;
-            this.btAddCompany.Click += new System.EventHandler(this.btAddCompany_Click);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(279, 24);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(92, 15);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Company name";
-            // 
-            // tbCompanyName
-            // 
-            this.tbCompanyName.Location = new System.Drawing.Point(279, 42);
-            this.tbCompanyName.Name = "tbCompanyName";
-            this.tbCompanyName.Size = new System.Drawing.Size(100, 23);
-            this.tbCompanyName.TabIndex = 1;
-            // 
-            // departmentsBindingSource
-            // 
-            this.departmentsBindingSource.DataMember = "Departments";
-            this.departmentsBindingSource.DataSource = this.companyBindingSource;
-            // 
-            // companyBindingSource
-            // 
-            this.companyBindingSource.DataSource = typeof(csharp_lb4_wf.Model.Company);
-            // 
-            // departmentsBindingSource1
-            // 
-            this.departmentsBindingSource1.DataMember = "Departments";
-            this.departmentsBindingSource1.DataSource = this.companyBindingSource;
+            panel1.BackgroundImageLayout = ImageLayout.None;
+            panel1.BorderStyle = BorderStyle.FixedSingle;
+            panel1.Controls.Add(btSaveJson);
+            panel1.Controls.Add(btLoadJson);
+            panel1.Controls.Add(btShoAll);
+            panel1.Controls.Add(btSortByDepartment);
+            panel1.Controls.Add(btSortBySalary);
+            panel1.Controls.Add(btSortByName);
+            panel1.Controls.Add(btSortByID);
+            panel1.Controls.Add(btDeleteDepartment);
+            panel1.Controls.Add(dgDepartments);
+            panel1.Controls.Add(btDeleteEmloyee);
+            panel1.Controls.Add(btAddEmployee);
+            panel1.Controls.Add(btAddDepartment);
+            panel1.Controls.Add(btDeleteCompany);
+            panel1.Controls.Add(lvCompanies);
+            panel1.Controls.Add(dgEmployees);
+            panel1.Controls.Add(label4);
+            panel1.Controls.Add(label3);
+            panel1.Controls.Add(label2);
+            panel1.Controls.Add(btAddCompany);
+            panel1.Controls.Add(label1);
+            panel1.Controls.Add(tbCompanyName);
+            panel1.Location = new Point(14, 16);
+            panel1.Margin = new Padding(3, 4, 3, 4);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(852, 814);
+            panel1.TabIndex = 0;
             // 
             // btShoAll
             // 
-            this.btShoAll.Location = new System.Drawing.Point(279, 280);
-            this.btShoAll.Name = "btShoAll";
-            this.btShoAll.Size = new System.Drawing.Size(135, 23);
-            this.btShoAll.TabIndex = 20;
-            this.btShoAll.Text = "Show all Employees";
-            this.btShoAll.UseVisualStyleBackColor = true;
-            this.btShoAll.Click += new System.EventHandler(this.btShoAll_Click);
+            btShoAll.Location = new Point(319, 373);
+            btShoAll.Margin = new Padding(3, 4, 3, 4);
+            btShoAll.Name = "btShoAll";
+            btShoAll.Size = new Size(154, 31);
+            btShoAll.TabIndex = 20;
+            btShoAll.Text = "Show all Employees";
+            btShoAll.UseVisualStyleBackColor = true;
+            btShoAll.Click += btShoAll_Click;
+            // 
+            // btSortByDepartment
+            // 
+            btSortByDepartment.Location = new Point(504, 693);
+            btSortByDepartment.Margin = new Padding(3, 4, 3, 4);
+            btSortByDepartment.Name = "btSortByDepartment";
+            btSortByDepartment.Size = new Size(154, 31);
+            btSortByDepartment.TabIndex = 19;
+            btSortByDepartment.Text = "Sort By Departmnet ID";
+            btSortByDepartment.UseVisualStyleBackColor = true;
+            btSortByDepartment.Click += btSortByDepartment_Click;
+            // 
+            // btSortBySalary
+            // 
+            btSortBySalary.Location = new Point(319, 693);
+            btSortBySalary.Margin = new Padding(3, 4, 3, 4);
+            btSortBySalary.Name = "btSortBySalary";
+            btSortBySalary.Size = new Size(154, 31);
+            btSortBySalary.TabIndex = 18;
+            btSortBySalary.Text = "Sort By Salary";
+            btSortBySalary.UseVisualStyleBackColor = true;
+            btSortBySalary.Click += btSortBySalary_Click;
+            // 
+            // btSortByName
+            // 
+            btSortByName.Location = new Point(504, 629);
+            btSortByName.Margin = new Padding(3, 4, 3, 4);
+            btSortByName.Name = "btSortByName";
+            btSortByName.Size = new Size(154, 31);
+            btSortByName.TabIndex = 17;
+            btSortByName.Text = "Sort By Name";
+            btSortByName.UseVisualStyleBackColor = true;
+            btSortByName.Click += btSortByName_Click;
+            // 
+            // btSortByID
+            // 
+            btSortByID.Location = new Point(319, 629);
+            btSortByID.Margin = new Padding(3, 4, 3, 4);
+            btSortByID.Name = "btSortByID";
+            btSortByID.Size = new Size(154, 31);
+            btSortByID.TabIndex = 16;
+            btSortByID.Text = "Sort By ID";
+            btSortByID.UseVisualStyleBackColor = true;
+            btSortByID.Click += btSortByID_Click;
+            // 
+            // btDeleteDepartment
+            // 
+            btDeleteDepartment.Location = new Point(504, 304);
+            btDeleteDepartment.Margin = new Padding(3, 4, 3, 4);
+            btDeleteDepartment.Name = "btDeleteDepartment";
+            btDeleteDepartment.Size = new Size(162, 31);
+            btDeleteDepartment.TabIndex = 15;
+            btDeleteDepartment.Text = "Delete";
+            btDeleteDepartment.UseVisualStyleBackColor = true;
+            btDeleteDepartment.Click += btDeleteDepartment_Click;
+            // 
+            // dgDepartments
+            // 
+            dgDepartments.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgDepartments.Location = new Point(3, 291);
+            dgDepartments.Margin = new Padding(3, 4, 3, 4);
+            dgDepartments.Name = "dgDepartments";
+            dgDepartments.RowHeadersWidth = 51;
+            dgDepartments.RowTemplate.Height = 25;
+            dgDepartments.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgDepartments.Size = new Size(274, 200);
+            dgDepartments.TabIndex = 14;
+            dgDepartments.CellContentClick += dgDepartments_CellContentClick_1;
+            // 
+            // btDeleteEmloyee
+            // 
+            btDeleteEmloyee.Location = new Point(504, 564);
+            btDeleteEmloyee.Margin = new Padding(3, 4, 3, 4);
+            btDeleteEmloyee.Name = "btDeleteEmloyee";
+            btDeleteEmloyee.Size = new Size(162, 31);
+            btDeleteEmloyee.TabIndex = 13;
+            btDeleteEmloyee.Text = "Delete Employee";
+            btDeleteEmloyee.UseVisualStyleBackColor = true;
+            btDeleteEmloyee.Click += btDeleteEmloyee_Click;
+            // 
+            // btAddEmployee
+            // 
+            btAddEmployee.Location = new Point(319, 564);
+            btAddEmployee.Margin = new Padding(3, 4, 3, 4);
+            btAddEmployee.Name = "btAddEmployee";
+            btAddEmployee.Size = new Size(154, 31);
+            btAddEmployee.TabIndex = 12;
+            btAddEmployee.Text = "Add Employee";
+            btAddEmployee.UseVisualStyleBackColor = true;
+            btAddEmployee.Click += btAddEmployee_Click;
+            // 
+            // btAddDepartment
+            // 
+            btAddDepartment.Location = new Point(319, 304);
+            btAddDepartment.Margin = new Padding(3, 4, 3, 4);
+            btAddDepartment.Name = "btAddDepartment";
+            btAddDepartment.Size = new Size(154, 31);
+            btAddDepartment.TabIndex = 11;
+            btAddDepartment.Text = "Add Department";
+            btAddDepartment.UseVisualStyleBackColor = true;
+            btAddDepartment.Click += btAddDepartment_Click;
+            // 
+            // btDeleteCompany
+            // 
+            btDeleteCompany.Location = new Point(567, 56);
+            btDeleteCompany.Margin = new Padding(3, 4, 3, 4);
+            btDeleteCompany.Name = "btDeleteCompany";
+            btDeleteCompany.Size = new Size(86, 31);
+            btDeleteCompany.TabIndex = 10;
+            btDeleteCompany.Text = "Delete";
+            btDeleteCompany.UseVisualStyleBackColor = true;
+            btDeleteCompany.Click += btDeleteCompany_Click;
+            // 
+            // lvCompanies
+            // 
+            lvCompanies.Location = new Point(3, 32);
+            lvCompanies.Margin = new Padding(3, 4, 3, 4);
+            lvCompanies.Name = "lvCompanies";
+            lvCompanies.Size = new Size(274, 211);
+            lvCompanies.TabIndex = 9;
+            lvCompanies.UseCompatibleStateImageBehavior = false;
+            lvCompanies.SelectedIndexChanged += lvCompanies_SelectedIndexChanged;
+            // 
+            // dgEmployees
+            // 
+            dgEmployees.AllowUserToAddRows = false;
+            dgEmployees.AutoGenerateColumns = false;
+            dgEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgEmployees.Columns.AddRange(new DataGridViewColumn[] { employeeIdDataGridViewTextBoxColumn, employeeNameDataGridViewTextBoxColumn, salaryDataGridViewTextBoxColumn, departmentDataGridViewTextBoxColumn });
+            dgEmployees.DataSource = employeeBindingSource;
+            dgEmployees.Location = new Point(3, 547);
+            dgEmployees.Margin = new Padding(3, 4, 3, 4);
+            dgEmployees.Name = "dgEmployees";
+            dgEmployees.RowHeadersWidth = 51;
+            dgEmployees.RowTemplate.Height = 25;
+            dgEmployees.Size = new Size(274, 200);
+            dgEmployees.TabIndex = 8;
+            // 
+            // employeeIdDataGridViewTextBoxColumn
+            // 
+            employeeIdDataGridViewTextBoxColumn.DataPropertyName = "EmployeeId";
+            employeeIdDataGridViewTextBoxColumn.HeaderText = "EmployeeId";
+            employeeIdDataGridViewTextBoxColumn.MinimumWidth = 6;
+            employeeIdDataGridViewTextBoxColumn.Name = "employeeIdDataGridViewTextBoxColumn";
+            employeeIdDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // employeeNameDataGridViewTextBoxColumn
+            // 
+            employeeNameDataGridViewTextBoxColumn.DataPropertyName = "EmployeeName";
+            employeeNameDataGridViewTextBoxColumn.HeaderText = "EmployeeName";
+            employeeNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            employeeNameDataGridViewTextBoxColumn.Name = "employeeNameDataGridViewTextBoxColumn";
+            employeeNameDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // salaryDataGridViewTextBoxColumn
+            // 
+            salaryDataGridViewTextBoxColumn.DataPropertyName = "Salary";
+            salaryDataGridViewTextBoxColumn.HeaderText = "Salary";
+            salaryDataGridViewTextBoxColumn.MinimumWidth = 6;
+            salaryDataGridViewTextBoxColumn.Name = "salaryDataGridViewTextBoxColumn";
+            salaryDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // departmentDataGridViewTextBoxColumn
+            // 
+            departmentDataGridViewTextBoxColumn.DataPropertyName = "Department";
+            departmentDataGridViewTextBoxColumn.HeaderText = "Department";
+            departmentDataGridViewTextBoxColumn.MinimumWidth = 6;
+            departmentDataGridViewTextBoxColumn.Name = "departmentDataGridViewTextBoxColumn";
+            departmentDataGridViewTextBoxColumn.Width = 125;
+            // 
+            // employeeBindingSource
+            // 
+            employeeBindingSource.DataSource = typeof(Model.Employee);
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(3, 523);
+            label4.Name = "label4";
+            label4.Size = new Size(81, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Employees";
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(3, 267);
+            label3.Name = "label3";
+            label3.Size = new Size(95, 20);
+            label3.TabIndex = 6;
+            label3.Text = "Departments";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(3, 0);
+            label2.Name = "label2";
+            label2.Size = new Size(83, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Companies";
+            // 
+            // btAddCompany
+            // 
+            btAddCompany.Location = new Point(462, 56);
+            btAddCompany.Margin = new Padding(3, 4, 3, 4);
+            btAddCompany.Name = "btAddCompany";
+            btAddCompany.Size = new Size(86, 31);
+            btAddCompany.TabIndex = 3;
+            btAddCompany.Text = "Add";
+            btAddCompany.UseVisualStyleBackColor = true;
+            btAddCompany.Click += btAddCompany_Click;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(319, 32);
+            label1.Name = "label1";
+            label1.Size = new Size(113, 20);
+            label1.TabIndex = 2;
+            label1.Text = "Company name";
+            // 
+            // tbCompanyName
+            // 
+            tbCompanyName.Location = new Point(319, 56);
+            tbCompanyName.Margin = new Padding(3, 4, 3, 4);
+            tbCompanyName.Name = "tbCompanyName";
+            tbCompanyName.Size = new Size(114, 27);
+            tbCompanyName.TabIndex = 1;
+            // 
+            // departmentsBindingSource
+            // 
+            departmentsBindingSource.DataMember = "Departments";
+            departmentsBindingSource.DataSource = companyBindingSource;
+            // 
+            // companyBindingSource
+            // 
+            companyBindingSource.DataSource = typeof(Model.Company);
+            // 
+            // departmentsBindingSource1
+            // 
+            departmentsBindingSource1.DataMember = "Departments";
+            departmentsBindingSource1.DataSource = companyBindingSource;
+            // 
+            // btLoadJson
+            // 
+            btLoadJson.Location = new Point(319, 137);
+            btLoadJson.Margin = new Padding(3, 4, 3, 4);
+            btLoadJson.Name = "btLoadJson";
+            btLoadJson.Size = new Size(154, 31);
+            btLoadJson.TabIndex = 21;
+            btLoadJson.Text = "Load from JSON";
+            btLoadJson.UseVisualStyleBackColor = true;
+            btLoadJson.Click += btLoadJson_Click;
+            // 
+            // btSaveJson
+            // 
+            btSaveJson.Location = new Point(499, 137);
+            btSaveJson.Margin = new Padding(3, 4, 3, 4);
+            btSaveJson.Name = "btSaveJson";
+            btSaveJson.Size = new Size(154, 31);
+            btSaveJson.TabIndex = 22;
+            btSaveJson.Text = "Save into JSON";
+            btSaveJson.UseVisualStyleBackColor = true;
+            btSaveJson.Click += btSaveJson_Click;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(770, 635);
-            this.Controls.Add(this.panel1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgDepartments)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dgEmployees)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.employeeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.departmentsBindingSource1)).EndInit();
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(880, 847);
+            Controls.Add(panel1);
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "Form1";
+            Text = "Form1";
+            Load += Form1_Load;
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)dgDepartments).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgEmployees).EndInit();
+            ((System.ComponentModel.ISupportInitialize)employeeBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)departmentsBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)companyBindingSource).EndInit();
+            ((System.ComponentModel.ISupportInitialize)departmentsBindingSource1).EndInit();
+            ResumeLayout(false);
         }
 
         #endregion
@@ -377,5 +425,7 @@
         private Button btSortByName;
         private Button btSortByID;
         private Button btShoAll;
+        private Button btSaveJson;
+        private Button btLoadJson;
     }
 }

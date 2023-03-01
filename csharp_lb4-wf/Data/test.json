@@ -1,0 +1,31 @@
+[
+  {
+    "Name": "11",
+    "Departments": [
+      {
+        "Id": "01",
+        "Name": "f"
+      }
+    ],
+    "Employees": [
+      {
+        "EmployeeId": "000",
+        "EmployeeName": "a",
+        "Salary": 1000,
+        "Department": {
+          "Id": "01",
+          "Name": "f"
+        }
+      },
+      {
+        "EmployeeId": "100",
+        "EmployeeName": "b",
+        "Salary": 1000,
+        "Department": {
+          "Id": "01",
+          "Name": "f"
+        }
+      }
+    ]
+  }
+]

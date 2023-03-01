@@ -1,4 +1,5 @@
 using csharp_lb4_wf.Model;
+using System.Text.Json;
 
 namespace csharp_lb4_wf
 {
@@ -7,12 +8,12 @@ namespace csharp_lb4_wf
         public List<Company> Companies = new();
         public Form1()
         {
-            InitializeComponent();        
+            InitializeComponent();
         }
 
         private Company? GetSelectedCompany()
         {
-            if (lvCompanies.SelectedItems.Count == 0 || lvCompanies.Items.Count == 0 )
+            if (lvCompanies.SelectedItems.Count == 0 || lvCompanies.Items.Count == 0)
                 return null;
 
             return lvCompanies.SelectedItems[0].Tag as Company;
@@ -20,19 +21,19 @@ namespace csharp_lb4_wf
 
         private void btAddCompany_Click(object sender, EventArgs e)
         {
-            Company company = new(tbCompanyName.Text);    
+            Company company = new(tbCompanyName.Text);
             Companies.Add(company);
             UpdateListView();
         }
 
         private void UpdateListView()
-        {            
+        {
             lvCompanies.Items.Clear();
-          
+
             foreach (var company in Companies)
             {
                 ListViewItem item = new ListViewItem(company.Name);
-               
+
                 item.Tag = company;
 
                 lvCompanies.Items.Add(item);
@@ -42,7 +43,7 @@ namespace csharp_lb4_wf
         private void lvCompanies_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (lvCompanies.SelectedItems.Count > 0)
-            {             
+            {
                 UpdateDepartmentsDataGrid();
             }
         }
@@ -50,7 +51,7 @@ namespace csharp_lb4_wf
         {
             if (GetSelectedCompany() is null)
             {
-                dgDepartments.DataSource = null;    
+                dgDepartments.DataSource = null;
                 return;
             }
             dgDepartments.DataSource = new List<Department>();
@@ -61,8 +62,8 @@ namespace csharp_lb4_wf
         private void btAddDepartment_Click(object sender, EventArgs e)
         {
             var company = GetSelectedCompany();
-            if ( company is null)
-                return;         
+            if (company is null)
+                return;
 
             AddDepartment addDepartment = new(company);
 
@@ -75,7 +76,7 @@ namespace csharp_lb4_wf
         {
             var company = GetSelectedCompany();
             if (company is null)
-                return;                      
+                return;
 
             AddEmployee addEmployee = new(company);
 
@@ -96,7 +97,7 @@ namespace csharp_lb4_wf
             //dgEmployees.DataSource = null;
             var employees = GetSelectedCompany().Employees;
 
-            dgEmployees.DataSource = employees.Count > 0 ? employees: null;
+            dgEmployees.DataSource = employees.Count > 0 ? employees : null;
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -148,8 +149,8 @@ namespace csharp_lb4_wf
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally 
-            { 
+            finally
+            {
                 UpdateEmployeeDataGrid();
             }
         }
@@ -184,7 +185,7 @@ namespace csharp_lb4_wf
         {
             if (GetSelectedCompany() is null) return;
 
-            if (dgDepartments.SelectedRows.Count == 0 ) return;   
+            if (dgDepartments.SelectedRows.Count == 0) return;
 
             var department = dgDepartments.SelectedRows[0].DataBoundItem as Department;
 
@@ -192,9 +193,9 @@ namespace csharp_lb4_wf
 
             try
             {
-                GetSelectedCompany().RemoveDepartment(department.Id);       
+                GetSelectedCompany().RemoveDepartment(department.Id);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -265,7 +266,7 @@ namespace csharp_lb4_wf
                 dgEmployees.DataSource = null;
 
                 dgEmployees.DataSource = data;
-            }            
+            }
             descendingName++;
         }
 
@@ -291,7 +292,7 @@ namespace csharp_lb4_wf
             }
             descendingSalary++;
         }
-        
+
         int descendingDepartment = 0;
         private void btSortByDepartment_Click(object sender, EventArgs e)
         {
@@ -322,11 +323,91 @@ namespace csharp_lb4_wf
 
             if (dgDepartments.SelectedRows.Count == 0) return;
 
-            var department =  dgDepartments.SelectedRows[0].DataBoundItem as Department;
+            var department = dgDepartments.SelectedRows[0].DataBoundItem as Department;
 
             ShowAllEmployees showAllEmployees = new(company.Employees.Where(x => x.Department == department).ToList());
 
             showAllEmployees.ShowDialog();
+        }
+        public List<Company>? LoadCompanies()
+        {
+            var companies = new List<Company>();
+
+            using (var openFileDialog = new OpenFileDialog())
+            {
+                openFileDialog.Filter = "JSON files (*.json)|*.json";
+                openFileDialog.Title = "Select a JSON file";
+
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    try
+                    {
+                        var jsonString = File.ReadAllText(openFileDialog.FileName);
+                        companies = JsonSerializer.Deserialize<List<Company>>(jsonString);
+                    }                    
+                    catch (Exception ex)
+                    {
+                        Console.WriteLine(ex.Message);
+                    }
+                }
+            }
+
+            return companies;
+        }
+        public ListView ConvertToListView(List<Company> companies, ListView listView)
+        {                
+            listView.Clear();
+
+            foreach (Company company in companies)
+            {
+                ListViewItem item = new ListViewItem(company.Name);
+                item.Tag = company;
+
+                listView.Items.Add(item);
+            }
+
+            return listView;
+        }
+
+        private void btLoadJson_Click(object sender, EventArgs e)
+        {
+            var companies = LoadCompanies();
+
+            if (companies is null) throw new Exception("Failed to load from file");
+
+            Companies = companies;
+
+            ConvertToListView(Companies,lvCompanies);
+        }
+
+        private List<Company> ExtractCompaniesFromListView(ListView listView)
+        {
+            var companies = new List<Company>();
+
+            foreach (ListViewItem item in listView.Items)
+            {
+                companies.Add(item.Tag as Company);
+            }
+
+            return companies;
+        }
+
+        private void btSaveJson_Click(object sender, EventArgs e)
+        {
+            var companies = ExtractCompaniesFromListView(lvCompanies);
+
+            var serializerOptions = new JsonSerializerOptions
+            {
+                WriteIndented = true
+            };
+            var companiesJson = JsonSerializer.Serialize(companies, serializerOptions);
+
+            var saveFileDialog = new SaveFileDialog();
+            saveFileDialog.Filter = "JSON Files (*.json)|*.json";
+            if (saveFileDialog.ShowDialog() == DialogResult.OK)
+            {
+                File.WriteAllText(saveFileDialog.FileName, companiesJson);
+            }
         }
     }
 }
